@@ -1,7 +1,6 @@
 name: "Generate Ascii"
 
-on:
-  push:
+on: push
 
 jobs:
   ascii_job:
