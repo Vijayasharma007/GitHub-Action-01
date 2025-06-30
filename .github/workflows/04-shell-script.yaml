@@ -1,4 +1,4 @@
-name: "Generate Ascii"
+name: "Generate Ascii shell script"
 
 on: push
 
