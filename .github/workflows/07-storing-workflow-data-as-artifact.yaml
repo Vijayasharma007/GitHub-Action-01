@@ -26,7 +26,7 @@ jobs:
 
 # download a file from which we upload using action
 
-    - name: Upload dragon text file
+    - name: download dragon text file
     - uses: actions/download-artifact@v4
       with:
         name: dragon-text-file
@@ -46,10 +46,11 @@ jobs:
     
     steps:
 
-     - name: Upload dragon text file
+     - name: download dragon text file
      - uses: actions/download-artifact@v4
        with:
         name: dragon-text-file
+
      - name: read file
        run: cat dragon.txt
      
