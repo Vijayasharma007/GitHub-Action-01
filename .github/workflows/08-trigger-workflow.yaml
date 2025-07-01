@@ -1,0 +1,12 @@
+name: Triggering Workflow
+on: 
+  schedule:
+    - cron: " */1 * * * * "
+
+jobs:
+  trigger-flow:
+    runs-on:
+      steps:
+      - name: echo hello world
+        run: 'echo "hello world" '
+  
