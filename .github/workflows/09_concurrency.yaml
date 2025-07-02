@@ -8,7 +8,13 @@ jobs:
         run: echo "test concurrency"
 
   test_concurrency:
-    runs-on: ubuntu-latest
+    needs: concurrency
+    runs-on: ubuntu-latest   
+
+    concurrency: 
+        group: production deployment  # group is nothing but give it unique name
+        cancel-in-progress: true   # it is goint to cancel any concurrency running job or workflow within the same concurrency group of you specify this as true
+                                   # Any existing workflow which is running it's going to cancel it and run the newer workflow
     steps:
       - name: sleep
         run: sleep 600
