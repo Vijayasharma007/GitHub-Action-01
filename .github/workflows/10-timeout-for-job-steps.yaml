@@ -1,0 +1,18 @@
+ #timeout-minutes: 1 means the entire job will be canceled if it runs longer than 1 minute.
+
+# Individual steps do not have a separate built-in timeout — the job-level timeout-minutes applies to the whole job.
+
+# The sleep 600 tries to sleep for 10 minutes, but the job will stop after 1 minute. """
+
+name: Timeout for job and steps
+
+on: push
+
+jobs:
+  timeout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 1  # This means the whole job will timeout after 1 minute
+
+    steps:
+      - name: Sleep for 10 minutes
+        run: sleep 600

@@ -17,5 +17,5 @@ jobs:
                                    # Any existing workflow which is running it's going to cancel it and run the newer workflow
     steps:
       - name: sleep
-        run: sleep 60  # github action only allow 6 min workflow
+        run: sleep 60  # github action only allow 6 hout workflow. Github workflow will kill the process after 6 hour
 
