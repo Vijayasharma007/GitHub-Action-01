@@ -1,0 +1,18 @@
+name: Matrix Configuration
+
+on:
+  push:
+
+jobs:
+    deploy-on-ubuntu:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Echo docker details
+          run: docker info
+
+    deploy-on-windows:
+        runs-on: windows-latest
+        steps:
+          - name: echo docker details
+            run: docker info
+
