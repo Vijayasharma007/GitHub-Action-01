@@ -1,23 +1,27 @@
+
+
 name: Matrix Configuration features of strategy
+
 on:
   push:
 
 jobs:
   deploy:
     strategy:
-      fail-fast: false
-      max-parallel: 2
+      fail-fast: false   # Don't cancel all jobs if one fails
+      max-parallel: 2    # Run at most 2 jobs in parallel
       matrix:
         os: [ubuntu-latest, windows-latest]
         images: [hello-world, alpine]
         exclude:
-            images: alpine
+          - images: alpine
             os: windows-latest
-    runs-on: ${{ matrix.os }}
-    steps:
-      
-      - name: run image
-        run: docker run ${{ matrix.images}}
 
-      - name: docker ps
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Run Docker image
+        run: docker run ${{ matrix.images }}
+
+      - name: List containers
         run: docker ps
