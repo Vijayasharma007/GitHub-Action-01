@@ -1,0 +1,15 @@
+name: Concurrency
+on: workflow_dispatch
+jobs:
+  concurrency:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo 
+        run: echo "test concurrency"
+
+  test_concurrency:
+    runs-on: ubuntu-latest
+    steps:
+      - name: sleep
+        run: sleep 600
+
