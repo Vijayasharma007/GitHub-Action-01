@@ -1,0 +1,13 @@
+name: If Expression
+on: 
+  push:
+    
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: ${{ github.ref == 'refs/heads/main' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Deploy
+        run: echo "Deploying only from main branch!"
